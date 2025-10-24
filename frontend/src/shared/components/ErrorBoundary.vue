@@ -11,7 +11,7 @@
 -->
 
 <script setup lang="ts">
-import { ref, onErrorCaptured } from 'vue'
+import { ref, onErrorCaptured, computed } from 'vue'
 import { useToast } from '@/shared/composables/useToast'
 
 interface ErrorInfo {
@@ -25,6 +25,9 @@ const hasError = ref(false)
 const error = ref<ErrorInfo | null>(null)
 const errorCount = ref(0)
 const toast = useToast()
+
+// Check if we're in development mode
+const isDev = computed(() => import.meta.env.DEV)
 
 // Define props
 interface Props {
@@ -57,7 +60,7 @@ onErrorCaptured((err: Error, instance, info) => {
   toast.error(`Component Error: ${err.message}`)
 
   // Log error details in development
-  if (import.meta.env.DEV) {
+  if (isDev.value) {
     console.error('[ErrorBoundary] Caught error:', {
       message: err.message,
       component: error.value.componentName,
@@ -67,7 +70,7 @@ onErrorCaptured((err: Error, instance, info) => {
   }
 
   // Report error to monitoring service in production
-  if (props.reportErrors && import.meta.env.PROD) {
+  if (props.reportErrors && !isDev.value) {
     // TODO: Integrate with error monitoring service (e.g., Sentry)
     // reportErrorToService(err, instance, info)
   }
@@ -149,7 +152,7 @@ Stack: ${error.value.stack || 'N/A'}
       </div>
 
       <!-- Error count indicator (for debugging) -->
-      <div v-if="import.meta.env.DEV && errorCount > 1" class="error-count">
+      <div v-if="isDev && errorCount > 1" class="error-count">
         Error occurred {{ errorCount }} times
       </div>
     </div>
