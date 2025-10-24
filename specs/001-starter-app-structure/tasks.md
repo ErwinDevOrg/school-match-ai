@@ -217,9 +217,9 @@
 
 ### Development Scripts for User Story 2
 
-- [ ] T106 [P] [US2] Create backend/Makefile with dev, test, lint, format, migrate commands
-- [ ] T107 [P] [US2] Add npm scripts to frontend/package.json: dev, build, test, test:e2e, lint, format, type-check
-- [ ] T108 [US2] Create root Makefile with commands to start both backend and frontend
+- [x] T106 [P] [US2] Create backend/Makefile with dev, test, lint, format, migrate commands
+- [x] T107 [P] [US2] Add npm scripts to frontend/package.json: dev, build, test, test:e2e, lint, format, type-check
+- [x] T108 [US2] Create root Makefile with commands to start both backend and frontend
 
 ### Debugging Configuration for User Story 2
 
