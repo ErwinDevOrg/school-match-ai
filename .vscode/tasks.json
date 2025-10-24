@@ -1,0 +1,314 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    // ============================================
+    // Backend Tasks
+    // ============================================
+    {
+      "label": "Backend: Start Dev Server",
+      "type": "shell",
+      "command": "make dev",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "backend"
+      },
+      "isBackground": true,
+      "runOptions": {
+        "instanceLimit": 1
+      }
+    },
+    {
+      "label": "Backend: Run Tests",
+      "type": "shell",
+      "command": "make test",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "backend"
+      },
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "Backend: Run Tests with Coverage",
+      "type": "shell",
+      "command": "make test-cov",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "backend"
+      }
+    },
+    {
+      "label": "Backend: Lint",
+      "type": "shell",
+      "command": "make lint",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": [
+        "$eslint-stylish"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "group": "backend"
+      }
+    },
+    {
+      "label": "Backend: Format",
+      "type": "shell",
+      "command": "make format",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "group": "backend"
+      }
+    },
+    {
+      "label": "Backend: Run Migrations",
+      "type": "shell",
+      "command": "make migrate",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "backend"
+      }
+    },
+    {
+      "label": "Backend: Create Migration",
+      "type": "shell",
+      "command": "make migrate-create MSG='${input:migrationMessage}'",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "backend"
+      }
+    },
+    // ============================================
+    // Frontend Tasks
+    // ============================================
+    {
+      "label": "Frontend: Start Dev Server",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "frontend"
+      },
+      "isBackground": true,
+      "runOptions": {
+        "instanceLimit": 1
+      }
+    },
+    {
+      "label": "Frontend: Run Tests",
+      "type": "shell",
+      "command": "npm test",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "frontend"
+      },
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "Frontend: Run Tests with Coverage",
+      "type": "shell",
+      "command": "npm run test:coverage",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "frontend"
+      }
+    },
+    {
+      "label": "Frontend: Run E2E Tests",
+      "type": "shell",
+      "command": "npm run test:e2e",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "frontend"
+      }
+    },
+    {
+      "label": "Frontend: Lint",
+      "type": "shell",
+      "command": "npm run lint:check",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": [
+        "$eslint-stylish"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "group": "frontend"
+      }
+    },
+    {
+      "label": "Frontend: Format",
+      "type": "shell",
+      "command": "npm run format",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "group": "frontend"
+      }
+    },
+    {
+      "label": "Frontend: Type Check",
+      "type": "shell",
+      "command": "npm run type-check",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": [
+        "$tsc"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "group": "frontend"
+      }
+    },
+    {
+      "label": "Frontend: Build",
+      "type": "shell",
+      "command": "npm run build",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "frontend"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    // ============================================
+    // Full Stack Tasks
+    // ============================================
+    {
+      "label": "Full Stack: Start All",
+      "dependsOn": [
+        "Backend: Start Dev Server",
+        "Frontend: Start Dev Server"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "fullstack"
+      }
+    },
+    {
+      "label": "Full Stack: Run All Tests",
+      "dependsOn": [
+        "Backend: Run Tests",
+        "Frontend: Run Tests"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "fullstack"
+      },
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Full Stack: Lint All",
+      "dependsOn": [
+        "Backend: Lint",
+        "Frontend: Lint"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "group": "fullstack"
+      }
+    },
+    {
+      "label": "Full Stack: Format All",
+      "dependsOn": [
+        "Backend: Format",
+        "Frontend: Format"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "group": "fullstack"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "migrationMessage",
+      "description": "Migration message",
+      "type": "promptString",
+      "default": "migration description"
+    }
+  ]
+}

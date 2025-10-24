@@ -1,0 +1,220 @@
+{
+  // ============================================
+  // Editor Settings
+  // ============================================
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.rulers": [
+    88,
+    120
+  ],
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.minimap.enabled": true,
+  "editor.suggestSelection": "first",
+  "editor.inlineSuggest.enabled": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  // ============================================
+  // Python Settings
+  // ============================================
+  "[python]": {
+    "editor.defaultFormatter": null,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.tabSize": 4,
+    "editor.rulers": [
+      88
+    ]
+  },
+  "python.defaultInterpreterPath": "${workspaceFolder}/backend/venv/bin/python",
+  "python.envFile": "${workspaceFolder}/backend/.env",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/backend/src"
+  ],
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Path": "${workspaceFolder}/backend/venv/bin/flake8",
+  "python.linting.flake8Args": [
+    "--config=${workspaceFolder}/backend/.flake8"
+  ],
+  "python.linting.mypyEnabled": true,
+  "python.linting.mypyPath": "${workspaceFolder}/backend/venv/bin/mypy",
+  "python.linting.mypyArgs": [
+    "--config-file=${workspaceFolder}/backend/mypy.ini"
+  ],
+  "python.linting.pylintEnabled": false,
+  "python.formatting.provider": "none",
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestPath": "${workspaceFolder}/backend/venv/bin/pytest",
+  "python.testing.pytestArgs": [
+    "tests",
+    "-v"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+  // Black formatter settings
+  "black-formatter.path": [
+    "${workspaceFolder}/backend/venv/bin/black"
+  ],
+  "black-formatter.args": [
+    "--config",
+    "${workspaceFolder}/backend/pyproject.toml"
+  ],
+  // isort settings
+  "isort.path": [
+    "${workspaceFolder}/backend/venv/bin/isort"
+  ],
+  "isort.args": [
+    "--settings-path",
+    "${workspaceFolder}/backend/pyproject.toml"
+  ],
+  // ============================================
+  // JavaScript/TypeScript Settings
+  // ============================================
+  "[javascript]": {
+    "editor.defaultFormatter": null,
+    "editor.tabSize": 2
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": null,
+    "editor.tabSize": 2
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar",
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.defaultFormatter": null,
+    "editor.tabSize": 2
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": null,
+    "editor.tabSize": 2
+  },
+  "typescript.tsdk": "frontend/node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  // ============================================
+  // Vue.js Settings
+  // ============================================
+  "volar.autoCompleteRefs": true,
+  "volar.codeLens.pugTools": false,
+  "volar.codeLens.scriptSetupTools": true,
+  "volar.completion.autoImportComponent": true,
+  "volar.takeOverMode.enabled": true,
+  // ============================================
+  // ESLint Settings
+  // ============================================
+  "eslint.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ],
+  "eslint.format.enable": false,
+  "eslint.codeActionsOnSave.mode": "all",
+  // ============================================
+  // Prettier Settings
+  // ============================================
+  "prettier.enable": true,
+  "prettier.requireConfig": true,
+  "prettier.configPath": "frontend/.prettierrc",
+  // ============================================
+  // File Associations
+  // ============================================
+  "files.associations": {
+    "*.env*": "dotenv",
+    ".flake8": "ini",
+    "Makefile": "makefile",
+    "*.mako": "mako"
+  },
+  // ============================================
+  // File Exclusions
+  // ============================================
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/node_modules": true,
+    "**/.DS_Store": true,
+    "**/dist": true,
+    "**/.venv": false,
+    "**/venv": false
+  },
+  "search.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/coverage": true,
+    "**/htmlcov": true,
+    "**/.git": true,
+    "**/package-lock.json": true,
+    "**/poetry.lock": true
+  },
+  // ============================================
+  // Terminal Settings
+  // ============================================
+  "terminal.integrated.cwd": "${workspaceFolder}",
+  "terminal.integrated.env.osx": {
+    "PYTHONPATH": "${workspaceFolder}/backend"
+  },
+  "terminal.integrated.env.linux": {
+    "PYTHONPATH": "${workspaceFolder}/backend"
+  },
+  "terminal.integrated.env.windows": {
+    "PYTHONPATH": "${workspaceFolder}\\backend"
+  },
+  // ============================================
+  // Git Settings
+  // ============================================
+  "git.ignoreLimitWarning": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  // ============================================
+  // Extension Settings
+  // ============================================
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "vue": "html"
+  },
+  // ============================================
+  // Testing Settings
+  // ============================================
+  "testing.automaticallyOpenPeekView": "failureInVisibleDocument",
+  // ============================================
+  // Task Runner Settings
+  // ============================================
+  "task.autoDetect": "on",
+  "task.problemMatchers.neverPrompt": {
+    "shell": true
+  }
+}

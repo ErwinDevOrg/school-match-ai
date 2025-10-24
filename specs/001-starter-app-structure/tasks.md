@@ -1,6 +1,6 @@
 # Tasks: Starter Web Application Structure
 
-**Input**: Design documents from `/specs/001-starter-app-structure/`  
+**Input**: Design documents from `/specs/001-starter-app-structure/`
 **Prerequisites**: plan.md, spec.md, research.md, data-model.md, contracts/openapi.yaml
 
 **Tests**: This specification includes FR-015 requiring example test files demonstrating unit and integration tests. Test tasks are included to satisfy this requirement.
@@ -223,9 +223,9 @@
 
 ### Debugging Configuration for User Story 2
 
-- [ ] T109 [P] [US2] Create .vscode/launch.json with FastAPI debugger configuration for backend
-- [ ] T110 [P] [US2] Add Vue.js debugger configuration to .vscode/launch.json for frontend
-- [ ] T111 [US2] Create .vscode/settings.json with workspace settings for Python and TypeScript
+- [x] T109 [P] [US2] Create .vscode/launch.json with FastAPI debugger configuration for backend
+- [x] T110 [P] [US2] Add Vue.js debugger configuration to .vscode/launch.json for frontend
+- [x] T111 [US2] Create .vscode/settings.json with workspace settings for Python and TypeScript
 
 ### Validation for User Story 2
 
@@ -588,4 +588,3 @@ Each sprint delivers independently valuable functionality!
 ---
 
 **Ready to start!** Begin with Phase 1 (Setup) and proceed through phases in order. After Phase 2, you can parallelize user stories based on team capacity.
-

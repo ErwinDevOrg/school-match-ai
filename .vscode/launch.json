@@ -1,0 +1,208 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Backend: FastAPI",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "src.main:app",
+        "--reload",
+        "--reload-delay",
+        "0.25",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--log-level",
+        "info"
+      ],
+      "cwd": "${workspaceFolder}/backend",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      },
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "autoReload": {
+        "enable": true
+      },
+      "django": false,
+      "gevent": false,
+      "presentation": {
+        "hidden": false,
+        "group": "backend",
+        "order": 1
+      }
+    },
+    {
+      "name": "Backend: FastAPI (No Reload)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "src.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--log-level",
+        "debug"
+      ],
+      "cwd": "${workspaceFolder}/backend",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      },
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "django": false,
+      "gevent": false,
+      "presentation": {
+        "hidden": false,
+        "group": "backend",
+        "order": 2
+      }
+    },
+    {
+      "name": "Backend: Python File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}/backend",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      },
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "presentation": {
+        "hidden": false,
+        "group": "backend",
+        "order": 3
+      }
+    },
+    {
+      "name": "Backend: Pytest Current File",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": [
+        "${file}",
+        "-v",
+        "-s"
+      ],
+      "cwd": "${workspaceFolder}/backend",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      },
+      "console": "integratedTerminal",
+      "justMyCode": false,
+      "presentation": {
+        "hidden": false,
+        "group": "backend",
+        "order": 4
+      }
+    },
+    {
+      "name": "Frontend: Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend/src",
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*",
+        "webpack:///./*": "${webRoot}/*",
+        "webpack:///./src/*": "${webRoot}/*",
+        "webpack:///*": "*",
+        "/./*": "${webRoot}/*"
+      },
+      "presentation": {
+        "hidden": false,
+        "group": "frontend",
+        "order": 1
+      }
+    },
+    {
+      "name": "Frontend: Edge",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend/src",
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*",
+        "webpack:///./*": "${webRoot}/*",
+        "webpack:///./src/*": "${webRoot}/*",
+        "webpack:///*": "*",
+        "/./*": "${webRoot}/*"
+      },
+      "presentation": {
+        "hidden": false,
+        "group": "frontend",
+        "order": 2
+      }
+    },
+    {
+      "name": "Frontend: Firefox",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend/src",
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*",
+        "webpack:///./*": "${webRoot}/*",
+        "webpack:///./src/*": "${webRoot}/*",
+        "webpack:///*": "*",
+        "/./*": "${webRoot}/*"
+      },
+      "presentation": {
+        "hidden": false,
+        "group": "frontend",
+        "order": 3
+      }
+    },
+    {
+      "name": "Frontend: Attach to Chrome",
+      "type": "chrome",
+      "request": "attach",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}/frontend/src",
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*",
+        "webpack:///./*": "${webRoot}/*",
+        "webpack:///./src/*": "${webRoot}/*"
+      },
+      "presentation": {
+        "hidden": false,
+        "group": "frontend",
+        "order": 4
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack: Backend + Frontend (Chrome)",
+      "configurations": [
+        "Backend: FastAPI",
+        "Frontend: Chrome"
+      ],
+      "presentation": {
+        "hidden": false,
+        "group": "fullstack",
+        "order": 1
+      },
+      "stopAll": true
+    },
+    {
+      "name": "Full Stack: Backend + Frontend (Edge)",
+      "configurations": [
+        "Backend: FastAPI",
+        "Frontend: Edge"
+      ],
+      "presentation": {
+        "hidden": false,
+        "group": "fullstack",
+        "order": 2
+      },
+      "stopAll": true
+    }
+  ]
+}
